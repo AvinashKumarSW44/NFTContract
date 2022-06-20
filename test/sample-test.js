@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-
+// make minor changes in this deployment file.
 describe("NFT", function () {
   it("Should return the new greeting once it's changed", async function () {
     const Greeter = await ethers.getContractFactory("NFT");
