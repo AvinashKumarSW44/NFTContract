@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 contract NFT is ERC721, Pausable, Ownable, ERC721Burnable, ReentrancyGuard {
     
 
-
+    // *still may be changing is needed
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
