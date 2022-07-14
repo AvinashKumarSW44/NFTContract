@@ -5,26 +5,29 @@
  * When running the script with `npx hardhat run <script>` you'll find the Hardhat
  * Runtime Environment's members available in the global scope.
  */
-const hre = require("hardhat");
+const hre = require('hardhat')
 
 async function main() {
-
-    /**
-     * Hardhat always runs the compile task when running scripts with its command
-     * line interface.
-     *
-     * If this script is run directly using `node` you may want to call compile
-     * manually to make sure everything is compiled
-     * await hre.run('compile')
-     */
+  /**
+   * Hardhat always runs the compile task when running scripts with its command
+   * line interface.
+   *
+   * If this script is run directly using `node` you may want to call compile
+   * manually to make sure everything is compiled
+   * await hre.run('compile')
+   * Just add some different scripts to do something different.
+   * Just working on another smart contract to deal with this.
+   */
 
   // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory("NFT");
-  const greeter = await Greeter.deploy("0xdD725fE09e95e30EBe43EaF64C1D20169Cf641aF");
+  const Greeter = await hre.ethers.getContractFactory('NFT')
+  const greeter = await Greeter.deploy(
+    '0x94De5Ee9C4337DEbabFCBB61Ee50fbc4a9C7ECC1',
+  )
 
-  await greeter.deployed();
+  await greeter.deployed()
 
-  console.log("NFT Contract deployed to:", greeter.address);
+  console.log('NFT Contract deployed to:', greeter.address)
 }
 
 /**
@@ -34,6 +37,6 @@ async function main() {
 main()
   .then(() => process.exit(0))
   .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+    console.error(error)
+    process.exit(1)
+  })
