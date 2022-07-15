@@ -82,15 +82,15 @@ contract StakingReward is Ownable{
             withdrawlReward[msg.sender] += reward;
         }
 
-        function totalStakedTokens() internal view onlyOwner returns (uint) {
+        function totalStakedTokens() public view onlyOwner returns (uint) {
             return _totalSupply;
         }
 
-        function tokenStakeByUser(address _user) internal view onlyOwner returns (uint) {
+        function tokenStakeByUser(address _user) public view onlyOwner returns (uint) {
             return _balances[_user];
         }
 
-        function totalRewardGetByUser(address _user) internal view onlyOwner returns (uint) {
+        function totalRewardGetByUser(address _user) public view onlyOwner returns (uint) {
             return withdrawlReward[_user];
         }
     }
